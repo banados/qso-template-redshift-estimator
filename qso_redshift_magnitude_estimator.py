@@ -44,19 +44,40 @@ pdf_file = estimator.create_visualization()
 from __future__ import division, print_function
 import os
 import argparse
-import json
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 from astropy.io import ascii
 from linetools.spectra.io import readspec, XSpectrum1D
-from astrotools import get_ind, between
+# from astrotools import get_ind, between
 from scipy.signal import medfilt
 from astropy.constants import c
 from astropy.cosmology import FlatLambdaCDM
 
 # Set up cosmology
 cosmo = FlatLambdaCDM(H0=70., Om0=0.3)
+
+
+def get_ind(val, arr):
+    '''
+    get a value and an array.
+    Returns the index of the closest element of the array to the value
+    '''
+    return min(range(len(arr)), key=lambda i: abs(arr[i] - val))
+
+
+def between(a, vmin, vmax):
+    """ Return a boolean array True where vmin <= a < vmax.
+    Notes
+    -----
+    Careful of floating point issues when dealing with equalities.
+    """
+    a = np.asarray(a)
+    c = a < vmax
+    c &= a >= vmin
+    return c
+
+
 
 
 class QSORedshiftEstimator:
