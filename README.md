@@ -20,7 +20,6 @@ This code was used in [Banados+2023 ApJS, 265, 29](https://ui.adsabs.harvard.edu
 - matplotlib
 - astropy
 - linetools
-- astrotools
 - scipy
 
 ### Setup
