@@ -508,7 +508,7 @@ class QSORedshiftEstimator:
         """
         zp1 = 1. + redshift
         lobs = wave0 * zp1
-        fnu = flambda * lobs**2 / c.to('Angstrom/s').value / zp1
+        fnu = flambda * lobs**2 / c.to('Angstrom/s').value / zp1 
     
         apparent_magnitude = -2.5 * np.log10(fnu) - 48.60
         dist_modulus = cosmo.distmod(redshift).value - 2.5 * np.log10(zp1)
@@ -581,9 +581,8 @@ class QSORedshiftEstimator:
                 **plot_dict
             )
             
-        # Set x-limits for observed spectrum
+       
         axs[1].legend(loc='best')
-        axs[2].set_xlim(8000, 10000)
         
         # Write information about templates
         self._write_information(axs[0], self.results['sorted_templates'])
@@ -597,8 +596,16 @@ class QSORedshiftEstimator:
             spc_rest = XSpectrum1D(self.obs_spc.wavelength / zp1, self.obs_spc.flux * zp1)
         
         self._plot_observed_spectrum(axs[3], spc_rest)
+
         axs[3].set_xlim(1216, 2600)
-        
+         # Set x-limits for observed spectrum to show Lyman alpha break
+        axs[2].set_xlim(1170*zp1, 1300*zp1)
+        #add secondary x-axis in axs[2] with rest-frame wavelength
+        axtop = axs[2].twiny()
+        axtop.set_xlim(axs[2].get_xlim())
+        axtop.set_xticks(axs[2].get_xticks())
+        axtop.set_xticklabels([f"{x/zp1:.0f}" for x in axs[2].get_xticks()])
+        # axtop.set_xlabel(r'$\lambda_{rest}$ [\AA]', fontsize=16) 
         # Calculate magnitudes
         mag_dict = self.calculate_magnitudes(self.results['sorted_templates'][0], ax=axs[3])
         
