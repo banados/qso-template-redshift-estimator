@@ -31,13 +31,13 @@ git clone https://github.com/your-username/qso-template-redshift-estimator.git
 cd qso-template-redshift-estimator
 ```
 
-## Usage
+### Usage
 
-### Command line
+## Command line
 ```
 python qso_redshift_magnitude_estimator.py spectrum.fits [options]
 ```
-### Examples
+## Examples
 ```
 # Basic usage
 python qso_redshift_magnitude_estimator.py example/P218+28_mods_zp1_Banados2023.spc
@@ -52,8 +52,9 @@ python qso_redshift_magnitude_estimator.py spectrum.fits --mask 9000:9200,9300:9
 python qso_redshift_magnitude_estimator.py example/P218+28_mods_zp1_Banados2023.spc --zmin 5.7 --zmax 6.1 --wmin 1212 --wmax 1400
 ```
 
-### As a Module
+## As a Module
 
+```
 from qso_redshift_magnitude_estimator import QSORedshiftEstimator
 
 # Create an estimator
@@ -67,18 +68,20 @@ best_redshift = results[0]['zbest']
 
 # Create visualization
 pdf_file = estimator.create_visualization()
+```
 
-Available Templates
+## Available Templates
 
-selsing2016
-yang2021
-weak-lya
-median-lya
-strong-lya
-vandenberk2001
+* selsing2016
+* yang2021
+* weak-lya
+* median-lya
+* strong-lya
+* vandenberk2001
 
-Command Line Options
+## Command Line Options
 
+```
 --smooth INT       Smoothing factor for the observed spectrum
 --errors           Use errors in chi-squared calculation and plotting (default)
 --no-errors        Ignore errors in chi-squared calculation and plotting
@@ -89,10 +92,11 @@ Command Line Options
 --mask STR         Regions to mask, format: "x1:x2,x3:x4"
 --template_spc STR Template spectrum to use ('all' by default)
 --redshift_fixed FLOAT Fixed redshift to evaluate at
+```
 
-Citation
+### Citation
 If you use this code in your research, please cite:
-
+```
 @ARTICLE{2023ApJS..265...29B,
        author = {{Ba{\~n}ados}, Eduardo and {Mazzucchelli}, Chiara and {Venemans}, Bram P. and et al.},
         title = "{The Pan-STARRS1 Distant z > 5.6 Quasar Survey: Three Years of Observations, Three New z > 6.5 Quasars, and the Slow Evolution at the Highest Redshift}",
@@ -105,3 +109,4 @@ If you use this code in your research, please cite:
         pages = {29},
           doi = {10.3847/1538-4365/acb59f},
 }
+```
