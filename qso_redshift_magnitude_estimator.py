@@ -6,7 +6,7 @@ Code used to estimate redshift and magnitudes for high-redshift quasars in
 Banados+2023 ApJS, 265 29
 https://ui.adsabs.harvard.edu/abs/2023ApJS..265...29B/abstract
 
-Inspured by a rougher code used in Banados+2016, ApJ, 227, 11
+Inspired by a rougher code used in Banados+2016, ApJ, 227, 11
 https://ui.adsabs.harvard.edu/abs/2016ApJS..227...11B/abstract
 
 This script estimates the redshift and magnitudes at specific rest-frame wavelengths 
