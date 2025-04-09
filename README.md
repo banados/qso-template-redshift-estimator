@@ -29,13 +29,16 @@ Clone the repository:
 ```bash
 git clone https://github.com/your-username/qso-template-redshift-estimator.git
 cd qso-template-redshift-estimator
+```
 
 ## Usage
 
 ### Command line
-
+```
 python qso_redshift_magnitude_estimator.py spectrum.fits [options]
-
+```
+### Examples
+```
 # Basic usage
 python qso_redshift_magnitude_estimator.py example/P218+28_mods_zp1_Banados2023.spc
 
@@ -47,6 +50,7 @@ python qso_redshift_magnitude_estimator.py spectrum.fits --mask 9000:9200,9300:9
 
 # Specify wavelength range for chi-squared calculation
 python qso_redshift_magnitude_estimator.py example/P218+28_mods_zp1_Banados2023.spc --zmin 5.7 --zmax 6.1 --wmin 1212 --wmax 1400
+```
 
 ### As a Module
 
