@@ -98,15 +98,23 @@ pdf_file = estimator.create_visualization()
 If you use this code in your research, please cite:
 ```
 @ARTICLE{2023ApJS..265...29B,
-       author = {{Ba{\~n}ados}, Eduardo and {Mazzucchelli}, Chiara and {Venemans}, Bram P. and et al.},
-        title = "{The Pan-STARRS1 Distant z > 5.6 Quasar Survey: Three Years of Observations, Three New z > 6.5 Quasars, and the Slow Evolution at the Highest Redshift}",
+       author = {{Ba{\~n}ados}, Eduardo and {Schindler}, Jan-Torge and {Venemans}, Bram P. and {Connor}, Thomas and {Decarli}, Roberto and {Farina}, Emanuele Paolo and {Mazzucchelli}, Chiara and {Meyer}, Romain A. and {Stern}, Daniel and {Walter}, Fabian and {Fan}, Xiaohui and {Hennawi}, Joseph F. and {Khusanova}, Yana and {Morrell}, Nidia and {Nanni}, Riccardo and {Noirot}, Ga{\"e}l and {Pensabene}, Antonio and {Rix}, Hans-Walter and {Simon}, Joseph and {Verdoes Kleijn}, Gijs A. and {Xie}, Zhang-Liang and {Yang}, Da-Ming and {Connor}, Andrew},
+        title = "{The Pan-STARRS1 z > 5.6 Quasar Survey. II. Discovery of 55 Quasars at 5.6 < z < 6.5}",
       journal = {\apjs},
+     keywords = {Quasars, Active galactic nuclei, 1319, 16, Astrophysics - Astrophysics of Galaxies, Astrophysics - Cosmology and Nongalactic Astrophysics},
          year = 2023,
         month = mar,
        volume = {265},
        number = {1},
           eid = {29},
         pages = {29},
-          doi = {10.3847/1538-4365/acb59f},
+          doi = {10.3847/1538-4365/acb3c7},
+archivePrefix = {arXiv},
+       eprint = {2212.04452},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2023ApJS..265...29B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
+
+
 ```
